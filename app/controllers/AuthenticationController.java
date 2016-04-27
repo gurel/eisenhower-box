@@ -23,7 +23,6 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 import static com.amazonaws.services.s3.internal.Constants.HMAC_SHA1_ALGORITHM;
-import static play.data.Form.form;
 
 public class AuthenticationController extends Controller {
 	@Inject

@@ -9,11 +9,8 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Result;
 import play.mvc.Security;
-import scala.compat.java8.FutureConverters;
-import scala.concurrent.Await;
 import scala.concurrent.duration.Duration;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
