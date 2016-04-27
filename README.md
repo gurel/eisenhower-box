@@ -1,6 +1,8 @@
 # Eisenhower Box
 This is a sample todo app.
 
+![Sample App View](docs/assets/ss-app.png)
+
 ## Prerequisites
 - node
 - npm
@@ -73,3 +75,9 @@ It's only initial user the system automatically creates.
 - Implemented service and model for User
 - User Authentication to Play, uses sessions.
 - Play Twirl templating for login and register pages
+
+### Screenshots
+![Sample App View](docs/assets/ss-login.png)
+![Sample App View](docs/assets/ss-app.png)
+![Sample App View](docs/assets/ss-addtask.png)
+![Sample App View](docs/assets/ss-settings.png)
