@@ -8,7 +8,9 @@ target
 /.settings
 /RUNNING_PID
 node_modules
+/project/.sbtserver
 /project/*-shim.sbt
 /project/project/
 /project/target/
 npm-debug.log.*
+/dynamodb/database
