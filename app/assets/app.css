@@ -1,0 +1,13 @@
+.editorDialog {
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.txtArea {
+  width: 100%;
+  resize: vertical;
+  outline: none;
+}
+
+.app {
+
+}

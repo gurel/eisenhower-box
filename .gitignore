@@ -1,0 +1,13 @@
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.sbtserver
+/.project
+/.settings
+/RUNNING_PID
+node_modules
+/project/*-shim.sbt
+/project/project/
+/project/target/

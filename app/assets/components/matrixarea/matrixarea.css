@@ -1,0 +1,24 @@
+.matrixarea {
+  height: 100%;
+}
+.header {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.matrixarea ul {
+  padding-left: 15px;
+}
+
+.matrixarea li span {
+  margin: 2px;
+  cursor: pointer;
+}
+
+.matrixarea li div {
+  display: inline-block;
+}
+
+.matrixarea .done {
+  text-decoration: line-through;
+  color: #648080;
+}

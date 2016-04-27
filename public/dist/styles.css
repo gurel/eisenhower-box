@@ -1,0 +1,150 @@
+.matrixarea__matrixarea___2fwG5 {
+  height: 100%;
+}
+.matrixarea__header___2i0_y {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.matrixarea__matrixarea___2fwG5 ul {
+  padding-left: 15px;
+}
+
+.matrixarea__matrixarea___2fwG5 li span {
+  margin: 2px;
+  cursor: pointer;
+}
+
+.matrixarea__matrixarea___2fwG5 li div {
+  display: inline-block;
+}
+
+.matrixarea__matrixarea___2fwG5 .matrixarea__done___1_E_E {
+  text-decoration: line-through;
+  color: #648080;
+}
+.matrix__matrix___2Xvq9 {
+
+  display: block;
+  margin: 15px;
+}
+
+.matrix__important_urgent___2BWIs {
+  background-color: rgb(218,255,94);
+  color: rgb(80,98,107);
+}
+
+.matrix__important_noturgent___2Rkl9 {
+  background-color: rgb(177,255,94);
+  color: rgb(80,98,107);
+}
+
+.matrix__notimportant_urgent___1A3Fs {
+  background-color: rgb(94,255,116);
+  color: rgb(80,98,107);
+}
+
+.matrix__notimportant_noturgent___1YpVs {
+  background-color: rgb(8,201,160);
+  color: rgb(80,98,107);
+}
+.ngdialog,.ngdialog-overlay{position:fixed;top:0;right:0;bottom:0;left:0}@-webkit-keyframes ngdialog-fadeout{0%{opacity:1}100%{opacity:0}}@keyframes ngdialog-fadeout{0%{opacity:1}100%{opacity:0}}@-webkit-keyframes ngdialog-fadein{0%{opacity:0}100%{opacity:1}}@keyframes ngdialog-fadein{0%{opacity:0}100%{opacity:1}}.ngdialog{box-sizing:border-box;overflow:auto;-webkit-overflow-scrolling:touch;z-index:10000}.ngdialog *,.ngdialog :after,.ngdialog :before{box-sizing:inherit}.ngdialog.ngdialog-disabled-animation,.ngdialog.ngdialog-disabled-animation .ngdialog-content,.ngdialog.ngdialog-disabled-animation .ngdialog-overlay{-webkit-animation:none!important;animation:none!important}.ngdialog-overlay{background:rgba(0,0,0,.4);-webkit-backface-visibility:hidden;-webkit-animation:ngdialog-fadein .5s;animation:ngdialog-fadein .5s}.ngdialog-no-overlay{pointer-events:none}.ngdialog.ngdialog-closing .ngdialog-overlay{-webkit-backface-visibility:hidden;-webkit-animation:ngdialog-fadeout .5s;animation:ngdialog-fadeout .5s}.ngdialog-content{background:#fff;-webkit-backface-visibility:hidden;-webkit-animation:ngdialog-fadein .5s;animation:ngdialog-fadein .5s;pointer-events:all}.ngdialog.ngdialog-closing .ngdialog-content{-webkit-backface-visibility:hidden;-webkit-animation:ngdialog-fadeout .5s;animation:ngdialog-fadeout .5s}.ngdialog-close:before{font-family:Helvetica,Arial,sans-serif;content:'\D7';cursor:pointer}body.ngdialog-open,html.ngdialog-open{overflow:hidden}@-webkit-keyframes ngdialog-flyin{0%{opacity:0;-webkit-transform:translateY(-40px);transform:translateY(-40px)}100%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@keyframes ngdialog-flyin{0%{opacity:0;-webkit-transform:translateY(-40px);transform:translateY(-40px)}100%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}}@-webkit-keyframes ngdialog-flyout{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}100%{opacity:0;-webkit-transform:translateY(-40px);transform:translateY(-40px)}}@keyframes ngdialog-flyout{0%{opacity:1;-webkit-transform:translateY(0);transform:translateY(0)}100%{opacity:0;-webkit-transform:translateY(-40px);transform:translateY(-40px)}}.ngdialog.ngdialog-theme-default{padding-bottom:160px;padding-top:160px}.ngdialog.ngdialog-theme-default.ngdialog-closing .ngdialog-content{-webkit-animation:ngdialog-flyout .5s;animation:ngdialog-flyout .5s}.ngdialog.ngdialog-theme-default .ngdialog-content{-webkit-animation:ngdialog-flyin .5s;animation:ngdialog-flyin .5s;background:#f0f0f0;border-radius:5px;color:#444;font-family:Helvetica,sans-serif;font-size:1.1em;line-height:1.5em;margin:0 auto;max-width:100%;padding:1em;position:relative;width:450px}.ngdialog.ngdialog-theme-default .ngdialog-close{border-radius:5px;cursor:pointer;position:absolute;right:0;top:0}.ngdialog.ngdialog-theme-default .ngdialog-close:before{background:0 0;border-radius:3px;color:#bbb;content:'\D7';font-size:26px;font-weight:400;height:30px;line-height:26px;position:absolute;right:3px;text-align:center;top:3px;width:30px}.ngdialog.ngdialog-theme-default .ngdialog-close:active:before,.ngdialog.ngdialog-theme-default .ngdialog-close:hover:before{color:#777}.ngdialog.ngdialog-theme-default .ngdialog-message{margin-bottom:.5em}.ngdialog.ngdialog-theme-default .ngdialog-input{margin-bottom:1em}.ngdialog.ngdialog-theme-default .ngdialog-input input[type=text],.ngdialog.ngdialog-theme-default .ngdialog-input input[type=password],.ngdialog.ngdialog-theme-default .ngdialog-input input[type=email],.ngdialog.ngdialog-theme-default .ngdialog-input input[type=url],.ngdialog.ngdialog-theme-default .ngdialog-input textarea{background:#fff;border:0;border-radius:3px;font-family:inherit;font-size:inherit;font-weight:inherit;margin:0 0 .25em;min-height:2.5em;padding:.25em .67em;width:100%}.ngdialog.ngdialog-theme-default .ngdialog-input input[type=text]:focus,.ngdialog.ngdialog-theme-default .ngdialog-input input[type=password]:focus,.ngdialog.ngdialog-theme-default .ngdialog-input input[type=email]:focus,.ngdialog.ngdialog-theme-default .ngdialog-input input[type=url]:focus,.ngdialog.ngdialog-theme-default .ngdialog-input textarea:focus{box-shadow:inset 0 0 0 2px #8dbdf1;outline:0}.ngdialog.ngdialog-theme-default .ngdialog-buttons:after{content:'';display:table;clear:both}.ngdialog.ngdialog-theme-default .ngdialog-button{border:0;border-radius:3px;cursor:pointer;float:right;font-family:inherit;font-size:.8em;letter-spacing:.1em;line-height:1em;margin:0 0 0 .5em;padding:.75em 2em;text-transform:uppercase}.ngdialog.ngdialog-theme-default .ngdialog-button:focus{-webkit-animation:ngdialog-pulse 1.1s infinite;animation:ngdialog-pulse 1.1s infinite;outline:0}@media (max-width:568px){.ngdialog.ngdialog-theme-default .ngdialog-button:focus{-webkit-animation:none;animation:none}}.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-primary{background:#3288e6;color:#fff}.ngdialog.ngdialog-theme-default .ngdialog-button.ngdialog-button-secondary{background:#e0e0e0;color:#777}body {
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+  background: url(e5b45a1e07ce7f13481a94266985d514.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.cover {
+  width: 100vw;
+  margin: 0px;
+  display: block;
+}
+.pt1 {
+  padding-top: 1em;
+}
+.pt2 {
+  padding-top: 2em;
+}
+.pt3 {
+  padding-top: 3em;
+}
+.pt4 {
+  padding-top: 4em;
+}
+.pt5 {
+  padding-top: 5em;
+}
+@media screen and (max-width: 768px) {
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 50%;
+  }
+}
+/*
+  Sign-in Page Styles
+
+*/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
+.app__editorDialog___26F8J {
+  font-size: 1em;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.app__txtArea___W7egg {
+  width: 100%;
+  resize: vertical;
+  outline: none;
+}
+
+.app__app___3V7nA {
+
+}
+
+/*# sourceMappingURL=styles.css.map*/

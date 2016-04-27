@@ -1,0 +1,18 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET			/assets/*file       controllers.Assets.versioned(path="/public", file: Asset)
+
+GET			/					controllers.HomeController.index()
+
+GET			/task               controllers.TaskController.getList()
+POST		/task              	controllers.TaskController.saveTask()
+GET 		/task/:id           controllers.TaskController.getByID(id: String)
+
+GET	     	/login              controllers.AuthenticationController.login()
+POST   		/login              controllers.AuthenticationController.authenticate()
+GET	     	/register           controllers.AuthenticationController.register()
+POST	    /register           controllers.AuthenticationController.signup()
+GET	     	/logout             controllers.AuthenticationController.logout()
+

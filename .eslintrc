@@ -1,0 +1,15 @@
+{
+  "parser": "babel-eslint",
+  "extends": "eslint:recommended",
+  "rules": {
+    "strict": [2, "never"],
+    "no-console": 0,
+    "arrow-body-style": ["error", "always"],
+    "arrow-parens": [2, "always"],
+    "arrow-spacing": "error",
+    "eqeqeq": "error",
+    "no-duplicate-imports": "error",
+    "prefer-arrow-callback": "error",
+    "no-var": "error"
+  }
+}

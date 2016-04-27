@@ -1,0 +1,47 @@
+@(form: Form[AuthenticationController.Login] = null,
+  registerform: Form[AuthenticationController.Register] = null)
+
+
+@main("Eisenhower Box - Login") {
+  <div class="container">
+  @if(registerform != null) {
+    @helper.form(routes.AuthenticationController.signup, args = 'class -> "form-signin") {
+      <h2>
+        <h1>Register</h1>
+
+      @if(registerform.hasGlobalErrors) {
+        <p class="error">
+        @registerform.globalError.message
+        </p>
+      }
+      <label for="email" class="sr-only">Email address</label>
+      <input type="email"  class="form-control" name="email" id="email" placeholder="Email address" required="" autofocus="" value="@registerform("email").value">
+      <label for="password" class="sr-only">Password</label>
+      <input type="password"  class="form-control" name="password" id="password" placeholder="Password" required="">
+      <label for="password2" class="sr-only">Password</label>
+      <input type="password"  class="form-control" name="password2" id="password2" placeholder="Repeat password" required="">
+      <p></p>
+      <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+    }
+  } else {
+    @helper.form(routes.AuthenticationController.authenticate, args = 'class -> "form-signin") {
+      <h2>
+        <h1>Sign In</h1>
+
+        @if(form.hasGlobalErrors) {
+          <p class="error">
+          @form.globalError.message
+          </p>
+        }
+        <label for="email" class="sr-only">Email address</label>
+        <input type="email"  class="form-control" name="email" id="email" placeholder="Email address" required="" autofocus="" value="@form("email").value">
+        <label for="password" class="sr-only">Password</label>
+        <input type="password"  class="form-control" name="password" id="password" placeholder="Password" required="">
+        <p></p>
+        <button type="submit" class="btn btn-lg btn-primary btn-block">Login</button>
+        <span class="pull-right"><a href="/register">Register</a></span>
+        }
+  }
+  </div>
+}
+

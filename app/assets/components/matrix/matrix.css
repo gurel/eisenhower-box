@@ -1,0 +1,25 @@
+.matrix {
+
+  display: block;
+  margin: 15px;
+}
+
+.important_urgent {
+  background-color: rgb(218,255,94);
+  color: rgb(80,98,107);
+}
+
+.important_noturgent {
+  background-color: rgb(177,255,94);
+  color: rgb(80,98,107);
+}
+
+.notimportant_urgent {
+  background-color: rgb(94,255,116);
+  color: rgb(80,98,107);
+}
+
+.notimportant_noturgent {
+  background-color: rgb(8,201,160);
+  color: rgb(80,98,107);
+}

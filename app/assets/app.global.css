@@ -1,0 +1,86 @@
+body {
+	margin: 0px;
+	width: 100vw;
+	height: 100vh;
+  background: url("images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.cover {
+  width: 100vw;
+  margin: 0px;
+  display: block;
+}
+.pt1 {
+  padding-top: 1em;
+}
+.pt2 {
+  padding-top: 2em;
+}
+.pt3 {
+  padding-top: 3em;
+}
+.pt4 {
+  padding-top: 4em;
+}
+.pt5 {
+  padding-top: 5em;
+}
+@media screen and (max-width: 768px) {
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 992px){
+  .ngdialog.ngdialog-theme-default .ngdialog-content {
+    width: 50%;
+  }
+}
+/*
+  Sign-in Page Styles
+
+*/
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+
+
