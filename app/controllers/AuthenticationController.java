@@ -18,12 +18,17 @@ import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.security.GeneralSecurityException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
 import static com.amazonaws.services.s3.internal.Constants.HMAC_SHA1_ALGORITHM;
 
+
+/**
+ * This controller is responsible for the login and registration operations.
+ */
 public class AuthenticationController extends Controller {
 	@Inject
 	private UserDAO userDAO;
@@ -105,35 +110,62 @@ public class AuthenticationController extends Controller {
 		}
 	}
 
+	/**
+	 * Renders the login page
+	 *
+	 * @return
+	 */
 	public Result login() {
 		return ok(
 				login.render(formFactory.form(Login.class), null)
 		);
 	}
+
+	/**
+	 * Renders the registration page
+	 *
+	 * @return
+	 */
 	public Result register() {
 		return ok(
 				login.render(null, formFactory.form(Register.class))
 		);
 	}
+
+	/**
+	 * Logouts the current user
+	 *
+	 * @return
+	 */
 	public Result logout() {
 		session().clear();
 		return redirect(
 				routes.HomeController.index()
 		);
 	}
+
+	/**
+	 * Auhenticate the user with their email and password.
+	 *
+	 * @return
+	 */
 	public CompletionStage<Result> authenticate() {
+		final Http.Session session = session();
+
 		Form<Login> loginForm = formFactory.form(Login.class).bindFromRequest();
 
 		if (loginForm.hasErrors()) {
 			return CompletableFuture.completedFuture(badRequest(login.render(loginForm, null)));
 		}
 
-		CompletionStage<String> booleanCompletionStage = userDAO.validateUser(loginForm.get().email, hashPassword(loginForm.get().password));
-		System.out.println(hashPassword(loginForm.get().password));
-		final Http.Session session = session();
+		CompletionStage<User> _userValidation = userDAO.validateUser(
+				loginForm.get().email,
+				hashPassword(loginForm.get().password)
+		);
 
-		return booleanCompletionStage.thenApply((userID) -> {
-			if (userID == null) {
+		return _userValidation.thenApply((user) -> {
+			if (user == null) {
+				// If no user is returned that would mean the system couldn't find a user with the given credentials.
 				List<ValidationError> errors = new ArrayList<>();
 				errors.add(0, new ValidationError("", "Invalid user or password"));
 				loginForm.errors().put("", errors);
@@ -142,13 +174,24 @@ public class AuthenticationController extends Controller {
 			}else{
 				session.clear();
 				session.put("email", loginForm.get().email);
-				session.put("userID", userID);
+				session.put("userID", user.getUserID());
+
+				// Update the last login date of the user.
+				user.setLastLoginDate(new Date());
+				// This operation will not actually block the context
+				userDAO.saveUser(user);
+
 				return redirect(
 						routes.HomeController.index()
 				);
 			}
 		});
 	}
+
+	/**
+	 * Creates a new user
+	 * @return
+	 */
 	public CompletionStage<Result> signup() {
 		Form<Register> registerForm = formFactory.form(Register.class).bindFromRequest();
 		final Http.Session session = session();
@@ -194,27 +237,26 @@ public class AuthenticationController extends Controller {
 
 		return future;
 	}
-	private String hashPassword(String data) {
+
+	/**
+	 * This function will hash the password using the secret key of the application.
+	 * It uses the javax.crypto library with HMAC_SHA1 algoritm
+	 *
+	 * @param data The string that is going to be hashed
+	 * @return String Hashed password
+	 * @throws IllegalArgumentException
+	 */
+	private String hashPassword(String data) throws IllegalArgumentException {
 		String secret = ConfigFactory.defaultApplication().getString("play.crypto.secret");
 		try {
-			SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes(),HMAC_SHA1_ALGORITHM);
+			SecretKeySpec signingKey = new SecretKeySpec(secret.getBytes(), HMAC_SHA1_ALGORITHM);
 			Mac mac = Mac.getInstance(HMAC_SHA1_ALGORITHM);
 			mac.init(signingKey);
 			byte[] rawHmac = mac.doFinal(data.getBytes());
-			String result = new String(Base64.encodeBase64(rawHmac));
-			return result;
+			return new String(Base64.encodeBase64(rawHmac));
 		} catch (GeneralSecurityException e) {
 			System.out.println("Unexpected error while creating hash: " + e.getMessage());
 			throw new IllegalArgumentException();
 		}
 	}
-
 }
-/*
-session.clear();
-session.put("email", loginForm.get().email);
-session.put("userID", savedUser.getUserID());
-return redirect(
-	routes.HomeController.index()
-);
-* */
