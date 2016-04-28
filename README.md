@@ -1,14 +1,24 @@
 # Eisenhower Box
-This is a sample todo app.
+This is a sample todo app that sorts/places tasks on a Eisenhower Matrix.
+
+I've implemented this project in order to learn Play Framework and Angular.
 
 ![Sample App View](docs/assets/ss-app.png)
+
+## Eisenhower Matrix
+Eisenhower matrix is a flow for self time management.You simply grade your tasks whether they are important and urgent. This is a simple
+
+See wiki entry for [wiki:Eisenhower Matrix](https://en.wikipedia.org/wiki/Time_management#The_Eisenhower_Method).
+
+![Eisenhower Matrix](docs/assets/eisenhower-box.jpg)
 
 ## Prerequisites
 - node
 - npm
+
 (activator should take care of rest)
 
-# Install
+## Running the app
 Pull files from git and then call:
 
 > npm install
@@ -38,43 +48,42 @@ It's only initial user the system automatically creates.
 
 
 ### Note to self
-- Check how to  Dev and Prod builds separately
-- Check Akka remoting and configuration
-- Akka supervision
+- Check how to Dev and Prod builds separately both on BE/FE, so that i may omit some debug code.
+- Check Akka remoting and clustering
+- Check out Akka supervision
 - Add Testing
-- dynamoDB must manually be started as Playhooks don't work on test
+- DynamoDB must Manually be started when testing with activator as Playhooks don't work on test
 
 ### Captains Log
-- New Project
-- Created a webpack setup in npm with Babel ES6 support (output 3 files app.js, vendor.js, style.css), didn't actually go into less/sass yet only plain css (see: webpack.config.js)
-- Attached npm scripts to SBT in order to build and watch for changes (hot-loading)
-- start with directives
-- scoped style and templating
-- get bootstrap as external dep.
-- Build matrix DOM
-- play with scope
-- generalization of directive creation
-- Started play controllers
-- Configured IntelliJ to debug
+- Create project using activator
+- Created a webpack setup in npm with Babel ES6 support (outputs 3 files app.js, vendor.js, style.css), didn't actually go into less/sass yet only plain css (see: webpack.config.js)
+- Attached npm scripts to play hooks in order to build and watch for changes (hot-loading)
+- Started with directives for matrix
+- Figured out how to do scoped styling and templating for directives. 
+- Added bootstrap as external dep.
+- Finished Matrix directive
+- Played with scopes for a bit, figured out how to pass data/functions to directives.
+- Generalized directive creation
+- Started playing with Play Controllers
+- Configured IntelliJ to Debug Play framework
 - Started to look at akka for non-blocking functionalities
 - Created model class for Task
-- Created task actors
-- Created task dao
-- checked how to do callbacks in controllers (java8 rules!)
-- started to look ad DynamoDB for persistant storage
+- Created Task Actors for persistance
+- Created task DAO for easy access to task actors
+- checked how to do callbacks in controllers (java8 rocks!) Figured out how to use CompletableFuture/CompletionStage classes.
+- started to look at DynamoDB for persistant storage
 - checked how to create and use Java annotations (syntax has changed since i last used java)
-- Started to implement annotations to support dynamodb
-- Found that aws sdk has already implemented annotations and mapping for dynamodb, so switched to that.
-- Started implementing TaskDAO to use actors so i can perform non-blocking DynamoDB actions.
-- Install and attach DynamoDB to SBT
-- Configured /gitignore
-- Implement DynamoDb on actors
+- Started to implement annotations to support dynamodb, although later on found out that aws sdk has already implemented annotations and mappers for dynamodb, so removed my implementations.
+- Install and attach DynamoDB to Playhooks
+- Configured .gitignore
+- Implement DynamoDB on actors
 - Add service to angular to do task operations
 - Add status to task (BE and FE)
 - Angular routing to add a settings screen
 - Implemented service and model for User
 - User Authentication to Play, uses sessions.
 - Play Twirl templating for login and register pages
+- Added hashing for password
 
 ### Screenshots
 ![Sample App View](docs/assets/ss-login.png)
