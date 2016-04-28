@@ -28,31 +28,30 @@ public class UserDAOImpl implements UserDAO {
 	ActorRef userActor;
 
 	@Override
-	public CompletionStage<String> validateUser(String username, String password) {
+	public CompletionStage<User> validateUser(String username, String password) {
 		return validateUser(username, password, Duration.create('1', TimeUnit.SECONDS));
 	}
 
 	@Override
-	public CompletionStage<String> validateUser(String username, String password, Duration timeout) {
+	public CompletionStage<User> validateUser(String username, String password, Duration timeout) {
+		// Fetch the user with the given username
 		Future<User> userFuture = ask(
 				userActor,
 				new UserActorProtocol.GetUserByUserName(username),
 				timeout.toMillis()
 		).mapTo(classTag(User.class));
 
-		CompletionStage<User> userCompletionStage = FutureConverters.toJava(userFuture);
-
-		CompletionStage<String> userIDCompletionStage = userCompletionStage.thenApply(
-				(user) -> {
+		CompletionStage<User> userCompletionStage = FutureConverters.toJava(userFuture).
+				thenApply((user) -> {
+					// check whether the given password matches the user
 					if (user.getPassword().equals(password)) {
-						return user.getUserID();
+						return user;
 					} else {
 						return null;
 					}
-				}
-		);
+				});
 
-		return userIDCompletionStage;
+		return userCompletionStage;
 	}
 
 	@Override
@@ -87,11 +86,14 @@ public class UserDAOImpl implements UserDAO {
 
 		// Since Akka cannot return a null value, instead we send a empty User object
 		// So if there is no id on the user translate that to null
-		return FutureConverters.toJava(userFuture).thenApply((user) -> {
-			if(user.getUserID() == null) {
-				return null;
-			}
-			return user;
-		});
+		return FutureConverters.toJava(userFuture).
+				thenApply((user) -> {
+					// This checking is done because akka doesn't support null messages
+					// Instead passed an dummy user back.
+					if(user.getUserID() == null) {
+						return null;
+					}
+					return user;
+				});
 	}
 }

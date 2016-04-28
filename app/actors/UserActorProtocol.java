@@ -1,11 +1,7 @@
 package actors;
 
-import models.Task;
 import models.User;
 
-/**
- * Created by gurelerceis on 18/04/16.
- */
 public class UserActorProtocol {
 	public static class GetUser {
 		public final String userID;

@@ -53,6 +53,7 @@ It's only initial user the system automatically creates.
 - Check out Akka supervision
 - Add Testing
 - DynamoDB must Manually be started when testing with activator as Playhooks don't work on test
+- Akka actors cannot pass back **null** values. Instead i returned dummy objects and had to validate on client. Is there a more appropriate way to do this.
 
 ### Captains Log
 - Create project using activator

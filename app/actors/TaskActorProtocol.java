@@ -2,9 +2,6 @@ package actors;
 
 import models.Task;
 
-/**
- * Created by gurelerceis on 18/04/16.
- */
 public class TaskActorProtocol {
 	public static class GetTask {
 		public final String taskID;
