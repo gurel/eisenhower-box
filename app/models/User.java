@@ -5,6 +5,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 import java.io.Serializable;
 import java.util.Date;
 
+/**
+ * User model class
+ */
 @DynamoDBTable(tableName="users")
 public class User implements Serializable {
 

@@ -4,6 +4,9 @@ import com.amazonaws.services.dynamodbv2.datamodeling.*;
 
 import java.io.Serializable;
 
+/**
+ * Task model class
+ */
 @DynamoDBTable(tableName="tasks")
 public class Task implements Serializable {
 	public static class Status {
